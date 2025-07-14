@@ -41,12 +41,15 @@ populate();
 function populateHeader(jsonBody) {
     // Create the H1 element
     let h1 = document.createElement("h1");
+    let para = document.createElement("p");
 
     h1.textContent = jsonBody.companyName;
+    para.textContent = `Head Office: ${jsonBody.headOffice}, est. ${jsonBody.established} - Active: ${jsonBody.active ? "yes" : "no"}`;
 
     // Grab the company name from the JSON object and use it for the text node
     // Inject the complete H1 element into the DOM, inside the HEADER
     header.appendChild(h1);
+    header.appendChild(para);
 }
 /* STEP 10b: Assemble the showTopFlavors() function */
 function showTopFlavors(jsonBody) {
