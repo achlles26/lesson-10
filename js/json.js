@@ -12,6 +12,10 @@ async function populate(){
     let response = await fetch(request);
 
     let responseJson = await response.json();
+
+    populateHeader(responseJson);
+
+    showTopFlavors(responseJson);
 }
 
 // Introducing JavaScript Object Notation (JSON): https://json.org/
@@ -34,13 +38,18 @@ async function populate(){
 populate();
 
 /* STEP 9b: Build out the populateHeader() function */
-function populateHeader() {
+function populateHeader(jsonBody) {
     // Create the H1 element
+    let h1 = document.createElement("h1");
+
+    h1.textContent = jsonBody.companyName;
+
     // Grab the company name from the JSON object and use it for the text node
     // Inject the complete H1 element into the DOM, inside the HEADER
+    header.appendChild(h1);
 }
 /* STEP 10b: Assemble the showTopFlavors() function */
-function showTopFlavors() {
+function showTopFlavors(jsonBody) {
     // STEP 10c: Attach the JSON topFlavors object to a variable
     // STEP 10d: Loop through the topFlavors object
     // STEP 10e: build HTML elements for the content: article, h2, image, p1, p2, list
