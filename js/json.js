@@ -5,7 +5,13 @@ const section = document.querySelector("section");
 // STEP 3a: Create the asynchronous function populate()
 async function populate(){
 
+    let url = "https://achlles26.github.io/lesson-10/js/i-scream.json";
     
+    let request = new Request(url);
+
+    let response = await fetch(request);
+
+    let responseJson = await response.json();
 }
 
 // Introducing JavaScript Object Notation (JSON): https://json.org/
@@ -25,6 +31,7 @@ async function populate(){
 // STEP 10a: Invoke the showTopFlavors function here, then build it below
 
 // STEP 3b: Call the populate() function
+populate();
 
 /* STEP 9b: Build out the populateHeader() function */
 function populateHeader() {
